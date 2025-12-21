@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>PS St. Antonius d/Padua</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { margin-bottom: 5px; }
+
+    table {
+      border-collapse: collapse;
+      width: 600px;   /* default desktop */
+      table-layout: fixed;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6px;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    th { background-color: #f2f2f2; }
+
+    input[type="text"] {
+      width: 95%;
+      box-sizing: border-box;
+      padding: 4px;
+    }
+
+    /* Responsif: stacked layout di layar kecil */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+      th {
+        display: none; /* header disembunyikan */
+      }
+      td {
+        border: none;
+        white-space: normal;
+      }
+      td:first-child {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      input[type="text"] {
+        width: 100%; /* input full width di mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>PS St. Antonius d/Padua</h2>
+  <p>Tahun : A</p>
+
+  <label for="hariMinggu">Hari Minggu:</label>
+  <input type="text" id="hariMinggu" name="hariMinggu" maxlength="50">
+  
+  <br><br>
+
+  <table>
+    <tr>
+      <th>Lagu</th>
+      <th>Nomor</th>
+      <th>Judul</th>
+    </tr>
+    <tr><td>Pembukaan</td><td><input type="text" name="nomor1"></td><td><input type="text" name="judul1"></td></tr>
+    <tr><td>Tuhan Kasihanilah</td><td><input type="text" name="nomor2"></td><td><input type="text" name="judul2"></td></tr>
+    <tr><td>Kemuliaan</td><td><input type="text" name="nomor3"></td><td><input type="text" name="judul3"></td></tr>
+    <tr><td>Mazmur</td><td><input type="text" name="nomor4"></td><td><input type="text" name="judul4"></td></tr>
+    <tr><td>Bait Pengantar Injil</td><td><input type="text" name="nomor5"></td><td><input type="text" name="judul5"></td></tr>
+    <tr><td>Aklamasi Sesudah Injil</td><td><input type="text" name="nomor6"></td><td><input type="text" name="judul6"></td></tr>
+    <tr><td>Persembahan</td><td><input type="text" name="nomor7"></td><td><input type="text" name="judul7"></td></tr>
+    <tr><td>Persembahan2</td><td><input type="text" name="nomor8"></td><td><input type="text" name="judul8"></td></tr>
+    <tr><td>Kudus</td><td><input type="text" name="nomor9"></td><td><input type="text" name="judul9"></td></tr>
+    <tr><td>Anamnesis</td><td><input type="text" name="nomor10"></td><td><input type="text" name="judul10"></td></tr>
+    <tr><td>Bapa Kami</td><td><input type="text" name="nomor11"></td><td><input type="text" name="judul11"></td></tr>
+    <tr><td>Salam Damai</td><td><input type="text" name="nomor12"></td><td><input type="text" name="judul12"></td></tr>
+    <tr><td>Anak Domba Allah</td><td><input type="text" name="nomor13"></td><td><input type="text" name="judul13"></td></tr>
+    <tr><td>Komuni</td><td><input type="text" name="nomor14"></td><td><input type="text" name="judul14"></td></tr>
+    <tr><td>Komuni2</td><td><input type="text" name="nomor15"></td><td><input type="text" name="judul15"></td></tr>
+    <tr><td>Komuni3</td><td><input type="text" name="nomor16"></td><td><input type="text" name="judul16"></td></tr>
+    <tr><td>Penutup</td><td><input type="text" name="nomor17"></td><td><input type="text" name="judul17"></td></tr>
+    <tr><td>Peziarah Pengharapan</td><td><input type="text" name="nomor18"></td><td><input type="text" name="judul18"></td></tr>
+  </table>
+
+  <br>
+  <button type="button" onclick="submitForm()">Kirim</button>
+
+  <script>
+    const scriptURL = "URL_WEB_APP_GOOGLE_SCRIPT"; // ganti dengan URL Web App
+
+    function submitForm() {
+      const data = {};
+      document.querySelectorAll("input[type=text]").forEach(inp => {
+        data[inp.name] = inp.value;
+      });
+      data.hariMinggu = document.getElementById("hariMinggu").value;
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => alert("Data berhasil dikirim"))
+      .catch(err => alert("Error: " + err));
+    }
+  </script>
+</body>
+</html>
