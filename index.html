@@ -2,69 +2,88 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>PS St. Antonius d/PAdua</title>
+  <title>PS St. Antonius d/Padua</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     h2 { margin-bottom: 5px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    table, th, td { border: 1px solid #000; }
-    th, td { padding: 8px; text-align: left; }
-    input[type="text"] { width: 95%; }
+
+    table {
+      border-collapse: collapse;
+      width: 600px;   /* fix lebar tabel */
+      table-layout: fixed;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6px;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    th { background-color: #f2f2f2; }
+
+    .col-lagu { width: 200px; }
+    .col-nomor { width: 100px; }
+    .col-judul { width: 300px; }
+
+    input[type="text"] {
+      width: 95%;
+      box-sizing: border-box;
+      padding: 4px;
+    }
   </style>
 </head>
 <body>
-  <!-- Judul -->
-  <h2>PS St. Antonius d/PAdua</h2>
+  <h2>PS St. Antonius d/Padua</h2>
   <p>Tahun : A</p>
 
-  <!-- Baris kedua -->
   <label for="hariMinggu">Hari Minggu:</label>
   <input type="text" id="hariMinggu" name="hariMinggu" maxlength="50">
   
-  <!-- Baris ketiga kosong -->
   <br><br>
 
-  <!-- Tabel -->
   <table>
     <tr>
-      <th>Lagu</th>
-      <th>Nomor</th>
-      <th>Judul</th>
+      <th class="col-lagu">Lagu</th>
+      <th class="col-nomor">Nomor</th>
+      <th class="col-judul">Judul</th>
     </tr>
-    <tr>
-      <td>Pembukaan</td>
-      <td><input type="text" name="nomor1" maxlength="15"></td>
-      <td><input type="text" name="judul1" maxlength="30"></td>
-    </tr>
-    <tr>
-      <td>Tuhan Kasihanilah kami</td>
-      <td><input type="text" name="nomor2" maxlength="15"></td>
-      <td><input type="text" name="judul2" maxlength="30"></td>
-    </tr>
-    <tr>
-      <td>Kemuliaan</td>
-      <td><input type="text" name="nomor3" maxlength="15"></td>
-      <td><input type="text" name="judul3" maxlength="30"></td>
-    </tr>
+    <tr><td>Pembukaan</td><td><input type="text" name="nomor1" maxlength="15"></td><td><input type="text" name="judul1" maxlength="30"></td></tr>
+    <tr><td>Tuhan Kasihanilah kami</td><td><input type="text" name="nomor2" maxlength="15"></td><td><input type="text" name="judul2" maxlength="30"></td></tr>
+    <tr><td>Kemuliaan</td><td><input type="text" name="nomor3" maxlength="15"></td><td><input type="text" name="judul3" maxlength="30"></td></tr>
+    <tr><td>Mazmur</td><td><input type="text" name="nomor4" maxlength="15"></td><td><input type="text" name="judul4" maxlength="30"></td></tr>
+    <tr><td>Bait Pengantar Injil</td><td><input type="text" name="nomor5" maxlength="15"></td><td><input type="text" name="judul5" maxlength="30"></td></tr>
+    <tr><td>Aklamasi Sesudah Injil</td><td><input type="text" name="nomor6" maxlength="15"></td><td><input type="text" name="judul6" maxlength="30"></td></tr>
+    <tr><td>Persembahan</td><td><input type="text" name="nomor7" maxlength="15"></td><td><input type="text" name="judul7" maxlength="30"></td></tr>
+    <!-- Baris kosong tapi tetap ada input -->
+    <tr><td>&nbsp;</td><td><input type="text" name="nomor8" maxlength="15"></td><td><input type="text" name="judul8" maxlength="30"></td></tr>
+    <tr><td>Kudus</td><td><input type="text" name="nomor9" maxlength="15"></td><td><input type="text" name="judul9" maxlength="30"></td></tr>
+    <tr><td>Anamnesis</td><td><input type="text" name="nomor10" maxlength="15"></td><td><input type="text" name="judul10" maxlength="30"></td></tr>
+    <tr><td>Bapa Kami</td><td><input type="text" name="nomor11" maxlength="15"></td><td><input type="text" name="judul11" maxlength="30"></td></tr>
+    <tr><td>Salam Damai</td><td><input type="text" name="nomor12" maxlength="15"></td><td><input type="text" name="judul12" maxlength="30"></td></tr>
+    <tr><td>Anak Domba Allah</td><td><input type="text" name="nomor13" maxlength="15"></td><td><input type="text" name="judul13" maxlength="30"></td></tr>
+    <tr><td>Komuni</td><td><input type="text" name="nomor14" maxlength="15"></td><td><input type="text" name="judul14" maxlength="30"></td></tr>
+    <!-- 2 baris kosong tapi tetap ada input -->
+    <tr><td>&nbsp;</td><td><input type="text" name="nomor15" maxlength="15"></td><td><input type="text" name="judul15" maxlength="30"></td></tr>
+    <tr><td>&nbsp;</td><td><input type="text" name="nomor16" maxlength="15"></td><td><input type="text" name="judul16" maxlength="30"></td></tr>
+    <tr><td>Penutup</td><td><input type="text" name="nomor17" maxlength="15"></td><td><input type="text" name="judul17" maxlength="30"></td></tr>
+    <tr><td>Peziarah Pengharapan</td><td><input type="text" name="nomor18" maxlength="15"></td><td><input type="text" name="judul18" maxlength="30"></td></tr>
   </table>
 
-  <!-- Tombol submit -->
   <br>
   <button type="button" onclick="submitForm()">Kirim</button>
 
   <script>
-    const scriptURL = "URL_WEB_APP_GOOGLE_SCRIPT"; // nanti diganti dengan URL Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxk_w2W6oH467bg-0bJbcxxeUaj76dv0diYZEXGw5kOSoODzpZl2OkBHH5dEvS1JNQ7/exec"; // nanti diganti
+    
 
     function submitForm() {
-      const data = {
-        hariMinggu: document.getElementById("hariMinggu").value,
-        nomor1: document.getElementsByName("nomor1")[0].value,
-        judul1: document.getElementsByName("judul1")[0].value,
-        nomor2: document.getElementsByName("nomor2")[0].value,
-        judul2: document.getElementsByName("judul2")[0].value,
-        nomor3: document.getElementsByName("nomor3")[0].value,
-        judul3: document.getElementsByName("judul3")[0].value
-      };
+      const data = {};
+      // ambil semua input
+      document.querySelectorAll("input[type=text]").forEach(inp => {
+        data[inp.name] = inp.value;
+      });
 
       fetch(scriptURL, {
         method: "POST",
