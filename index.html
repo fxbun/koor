@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daftar Lagu</title>
+</head>
+<body>
+  <h2>Form Input</h2>
+  <form id="myForm">
+    <input type="text" id="kolom1" placeholder="Kolom 1"><br><br>
+    <input type="text" id="kolom2" placeholder="Kolom 2"><br><br>
+    <button type="submit">Kirim</button>
+  </form>
+
+  <script>
+    const scriptURL = "URL_WEB_APP_GOOGLE_SCRIPT"; // nanti diganti
+    document.getElementById("myForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const data = {
+        kolom1: document.getElementById("kolom1").value,
+        kolom2: document.getElementById("kolom2").value
+      };
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => alert("Data berhasil dikirim"))
+      .catch(err => alert("Error: " + err));
+    });
+  </script>
+</body>
+</html>
