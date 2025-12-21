@@ -54,6 +54,35 @@
         width: 100%; /* input full width di mobile */
       }
     }
+    button {
+  font-size: 1.5em;   /* teks lebih besar */
+  padding: 12px 24px; /* ruang dalam lebih besar */
+  background-color: #4CAF50; /* hijau agar jelas */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049; /* efek hover */
+}
+
+/* Mobile: tombol full width */
+@media (max-width: 600px) {
+  button {
+    width: 100%;
+    font-size: 1.8em;
+    padding: 16px;
+  }
+}
+#hariMinggu {
+  width: 60ch;       /* lebar maksimal 60 karakter */
+  max-width: 100%;   /* tetap responsif, tidak melebihi layar */
+  padding: 6px;
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
